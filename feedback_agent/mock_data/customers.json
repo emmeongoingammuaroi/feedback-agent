@@ -1,0 +1,119 @@
+[
+  {
+    "customer_id": "CUST-1001",
+    "email": "j.tan@example.com",
+    "name": "Jasmine Tan",
+    "tier": "pro",
+    "tenure_months": 14,
+    "order_count": 23,
+    "lifetime_value_usd": 4200,
+    "past_tickets": [
+      {
+        "ticket_id": "TCK-881",
+        "date": "2026-05-02",
+        "category": "billing_complaint",
+        "resolution": "Refunded duplicate charge of $49.00"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-1002",
+    "email": "m.reyes@example.com",
+    "name": "Marcus Reyes",
+    "tier": "free",
+    "tenure_months": 2,
+    "order_count": 1,
+    "lifetime_value_usd": 0,
+    "past_tickets": []
+  },
+  {
+    "customer_id": "CUST-1003",
+    "email": "p.nair@example.com",
+    "name": "Priya Nair",
+    "tier": "enterprise",
+    "tenure_months": 38,
+    "order_count": 156,
+    "lifetime_value_usd": 89000,
+    "past_tickets": [
+      {
+        "ticket_id": "TCK-712",
+        "date": "2025-11-14",
+        "category": "bug_report",
+        "resolution": "Confirmed and fixed API rate-limit miscalculation in v3.2.1 release"
+      },
+      {
+        "ticket_id": "TCK-905",
+        "date": "2026-06-20",
+        "category": "general_inquiry",
+        "resolution": "Provided SSO configuration documentation"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-1004",
+    "email": "d.kim@example.com",
+    "name": "Daniel Kim",
+    "tier": "pro",
+    "tenure_months": 6,
+    "order_count": 8,
+    "lifetime_value_usd": 960,
+    "past_tickets": [
+      {
+        "ticket_id": "TCK-820",
+        "date": "2026-03-11",
+        "category": "feature_request",
+        "resolution": "Logged request for CSV export to product backlog (PRD-118)"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-1005",
+    "email": "a.bello@example.com",
+    "name": "Aisha Bello",
+    "tier": "free",
+    "tenure_months": 1,
+    "order_count": 0,
+    "lifetime_value_usd": 0,
+    "past_tickets": []
+  },
+  {
+    "customer_id": "CUST-1006",
+    "email": "r.osullivan@example.com",
+    "name": "Robert O'Sullivan",
+    "tier": "enterprise",
+    "tenure_months": 52,
+    "order_count": 340,
+    "lifetime_value_usd": 210000,
+    "past_tickets": [
+      {
+        "ticket_id": "TCK-455",
+        "date": "2025-02-08",
+        "category": "churn_risk",
+        "resolution": "Accepted 15% loyalty discount for 12-month renewal; retained"
+      },
+      {
+        "ticket_id": "TCK-1002",
+        "date": "2026-07-01",
+        "category": "billing_complaint",
+        "resolution": "Escalated to Billing Lead; applied service credit of $1,200 for outage during invoiced period"
+      }
+    ]
+  },
+  {
+    "customer_id": "CUST-1007",
+    "email": "w.chen@example.com",
+    "name": "Wei Chen",
+    "tier": "pro",
+    "tenure_months": 9,
+    "order_count": 15,
+    "lifetime_value_usd": 1800,
+    "past_tickets": [
+      {
+        "ticket_id": "TCK-770",
+        "date": "2026-01-19",
+        "category": "abuse_or_policy_violation",
+        "resolution": "Issued formal warning for sharing account credentials outside seat limit; account retained"
+      }
+    ]
+  }
+]

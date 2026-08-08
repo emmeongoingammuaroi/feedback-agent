@@ -1,0 +1,96 @@
+[
+  {
+    "category": "bug_report",
+    "standard_process": [
+      "Acknowledge receipt and thank the customer for the report",
+      "Attempt to reproduce the issue using the details provided (steps, screenshots, environment)",
+      "Check the known-issues tracker for a matching open bug",
+      "If reproducible and new, file a ticket with Engineering and tag it with a severity level",
+      "If a known workaround exists, share it with the customer immediately",
+      "Notify the customer once a fix ships, or provide an ETA if the issue is still open",
+      "If the customer is pro/enterprise tier and impact was material, evaluate service credit eligibility per BUGCREDIT-01"
+    ],
+    "default_sla_hours": 24,
+    "escalation_trigger": "Bug blocks core product functionality for multiple customers, causes data loss, or affects an enterprise-tier account",
+    "owner_team": "Product Support / Engineering Liaison"
+  },
+  {
+    "category": "billing_complaint",
+    "standard_process": [
+      "Verify the customer's identity and pull recent billing history",
+      "Identify the specific charge(s) in dispute",
+      "Check refund eligibility against REFUND-01",
+      "Issue a refund or credit if eligible, or clearly explain why the charge is valid if not",
+      "Document the resolution on the customer's account record",
+      "Follow up within 48 hours to confirm the issue is resolved to the customer's satisfaction"
+    ],
+    "default_sla_hours": 12,
+    "escalation_trigger": "Disputed amount exceeds $500, or the customer has 2+ prior unresolved billing complaints within 90 days",
+    "owner_team": "Billing Support"
+  },
+  {
+    "category": "feature_request",
+    "standard_process": [
+      "Acknowledge the request and thank the customer for the feedback",
+      "Check the product roadmap and feature-request backlog for an existing matching entry",
+      "Log a new backlog entry if none exists, tagging the requesting customer and tier",
+      "Set expectations clearly: no guaranteed timeline is given",
+      "Close the ticket — no refund or compensation action applies"
+    ],
+    "default_sla_hours": 48,
+    "escalation_trigger": "Requested by 5+ enterprise customers within 90 days, or requested directly by an enterprise account's executive sponsor",
+    "owner_team": "Product Management"
+  },
+  {
+    "category": "praise",
+    "standard_process": [
+      "Thank the customer personally and acknowledge the specific thing they praised",
+      "Log the feedback for the relevant team (product, support, or success) for visibility",
+      "Flag to Customer Success as a potential reference or testimonial candidate if the customer is pro or enterprise tier",
+      "Close the ticket — no further action required"
+    ],
+    "default_sla_hours": 72,
+    "escalation_trigger": "None — praise is never escalated",
+    "owner_team": "Customer Success"
+  },
+  {
+    "category": "churn_risk",
+    "standard_process": [
+      "Review account history: tenure, lifetime value, recent tickets, and usage trend",
+      "Identify the root cause of dissatisfaction from the feedback text",
+      "Check retention offer eligibility per tier under CHURN-01",
+      "Proactively reach out with a retention offer or a concrete resolution plan",
+      "Escalate to the assigned Account Manager if the customer is enterprise tier",
+      "Log the outcome (retained, churned, or pending) for churn analytics regardless of result"
+    ],
+    "default_sla_hours": 6,
+    "escalation_trigger": "Enterprise-tier account, lifetime value above $10,000, or the customer explicitly states intent to cancel",
+    "owner_team": "Customer Success / Retention"
+  },
+  {
+    "category": "abuse_or_policy_violation",
+    "standard_process": [
+      "Do not take the reported content or behavior at face value — verify against account activity logs",
+      "Check ABUSE-01 for the specific violation type",
+      "Determine severity tier: warning, suspension, or termination",
+      "Apply the appropriate action per policy and document the justification on the account",
+      "Notify Trust & Safety for any suspension or termination decision before it is applied",
+      "Respond to the reporting customer, if applicable, without disclosing details of the other account"
+    ],
+    "default_sla_hours": 4,
+    "escalation_trigger": "Any report involving fraud, harassment, illegal content, or a repeat violation by the same account",
+    "owner_team": "Trust & Safety"
+  },
+  {
+    "category": "general_inquiry",
+    "standard_process": [
+      "Read the inquiry and confirm it genuinely has no clearer category",
+      "Answer directly using available policy or help-center knowledge if the question is straightforward",
+      "If it requires specialist knowledge, route it to the appropriate team",
+      "Close the ticket once the customer's question has been answered"
+    ],
+    "default_sla_hours": 24,
+    "escalation_trigger": "Inquiry cannot be answered from existing policy or documentation after initial triage",
+    "owner_team": "Tier 1 Support"
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "policy_id": "REFUND-01",
+    "category": "billing_complaint",
+    "title": "Duplicate Charge & Billing Error Refund Policy",
+    "summary": "Full refund for verified duplicate charges or billing system errors, issued within 5 business days.",
+    "full_text": "If a customer is charged more than once for the same billing period, or charged an amount that does not match their active plan price, the duplicate or erroneous portion is refunded in full once verified against the billing system logs. Refunds are issued to the original payment method within 5 business days of confirmation. No refund is issued for charges the customer authorized and that match their plan (e.g., disputing a price they agreed to at signup) — those cases should be handled as a billing explanation, not a refund. Refunds over $1,000 require Billing Lead sign-off.",
+    "applies_to_tiers": ["free", "pro", "enterprise"]
+  },
+  {
+    "policy_id": "SLA-01",
+    "category": "sla",
+    "title": "Support Response SLA by Tier",
+    "summary": "First-response and resolution time targets vary by customer tier; enterprise gets the fastest guarantees.",
+    "full_text": "Free tier: first response within 48 business hours, best-effort resolution. Pro tier: first response within 24 business hours, target resolution within 5 business days. Enterprise tier: first response within 4 hours (24/7), target resolution within 1 business day for high/critical issues per contracted SLA. Missing the first-response SLA on a pro or enterprise account automatically triggers escalation per ESCALATION-01.",
+    "applies_to_tiers": ["free", "pro", "enterprise"]
+  },
+  {
+    "policy_id": "ESCALATION-01",
+    "category": "escalation",
+    "title": "Ticket Escalation Rules",
+    "summary": "Defines when a ticket must be escalated beyond Tier 1 support to a lead, specialist team, or account manager.",
+    "full_text": "A ticket must be escalated when any of the following apply: (1) the customer is enterprise tier and the issue is unresolved past the SLA-01 first-response window; (2) the financial amount in question (refund, credit, dispute) exceeds $500; (3) the same customer has raised 2 or more tickets in the same category within 90 days without resolution; (4) the customer explicitly threatens to cancel or requests a manager. Escalated tickets are reassigned to the relevant team lead within 1 business hour and the customer is notified that their case has been escalated.",
+    "applies_to_tiers": ["free", "pro", "enterprise"]
+  },
+  {
+    "policy_id": "ABUSE-01",
+    "category": "abuse_or_policy_violation",
+    "title": "Abuse & Policy Violation Handling",
+    "summary": "Three-tier response (warning, suspension, termination) for violations such as credential sharing, fraud, or harassment.",
+    "full_text": "Policy violations are assessed on a severity scale. Tier 1 (warning): first-time minor violations such as sharing login credentials beyond the seat limit, or non-malicious ToS breaches — a formal written warning is issued and logged on the account. Tier 2 (suspension): repeat Tier 1 violations, or a first-time serious violation such as attempted payment fraud — account access is suspended for 14 days pending review by Trust & Safety. Tier 3 (termination): confirmed fraud, harassment of staff or other users, or illegal activity — account is terminated immediately with no refund of unused balance, per the Terms of Service. All Tier 2 and Tier 3 actions require Trust & Safety sign-off before being applied.",
+    "applies_to_tiers": ["free", "pro", "enterprise"]
+  },
+  {
+    "policy_id": "CHURN-01",
+    "category": "churn_risk",
+    "title": "Churn Retention Offer Policy",
+    "summary": "Discretionary discount or credit offers to retain at-risk paying customers, scaled by tier and lifetime value.",
+    "full_text": "When a paying customer signals intent to cancel or shows strong dissatisfaction, Customer Success may offer a retention incentive without further approval up to: pro tier — one month free or a 10% discount for 3 months; enterprise tier — up to a 15% discount on renewal for a 12-month commitment, or a service credit up to $2,000 for a documented service failure. Offers beyond these thresholds require Customer Success Lead approval. Retention offers are not available to free-tier accounts, as there is no paid subscription to retain. Every offer made (or declined) must be logged for churn analytics regardless of outcome.",
+    "applies_to_tiers": ["pro", "enterprise"]
+  },
+  {
+    "policy_id": "BUGCREDIT-01",
+    "category": "bug_report",
+    "title": "Service Credit for Verified Product Bugs",
+    "summary": "Paid-tier customers materially impacted by a confirmed bug may receive a pro-rated service credit.",
+    "full_text": "If Engineering confirms a reported bug caused material impact to a pro or enterprise customer (e.g., feature unusable for more than 24 hours, data loss, incorrect billing calculation caused by a software defect), a pro-rated service credit for the affected period may be issued once the bug is confirmed and, where possible, a fix or workaround is identified. Credits are not issued for bugs that are reported but not reproducible, or for free-tier accounts (informational acknowledgment only). Credits over $500 require Billing Lead approval, same threshold as ESCALATION-01.",
+    "applies_to_tiers": ["pro", "enterprise"]
+  }
+]
