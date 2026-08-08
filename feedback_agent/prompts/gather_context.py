@@ -51,6 +51,15 @@ def build_gather_context_prompt(
         "treat that as a real, final answer: do not guess, invent, or "
         "hallucinate a substitute value — a missing record is a normal outcome "
         "to report as-is.\n\n"
+        "Once you have gathered enough context (or determined that no tools "
+        "apply), respond with ONLY a single JSON object, no prose, no markdown "
+        "code fences, summarizing what you found, in this exact shape:\n"
+        '{"customer_found": <bool>, "customer_summary": "<one sentence, or '
+        'null if no customer_id was given or the customer wasn\'t found>", '
+        '"policies_used": [<the full policy objects you retrieved that are '
+        'actually relevant to this feedback, or an empty list>], '
+        '"workflow_guideline": <the full workflow guideline object you '
+        "retrieved, or null>}\n\n"
         f"{_INJECTION_GUARDRAIL}"
     )
 

@@ -8,6 +8,7 @@ import json
 import logging
 import time
 from collections.abc import Callable
+from datetime import UTC, datetime
 from typing import Any, TypeVar
 
 from anthropic import AnthropicBedrock, APIStatusError, RateLimitError
@@ -80,6 +81,7 @@ def run_tool_loop(
     tool_dispatch: dict[str, Callable[..., dict]],
     max_iterations: int,
     trace: list[dict],
+    tool_call_log: list[dict] | None = None,
 ) -> tuple[str, bool]:
     """Run the ReAct tool-calling loop until Claude stops calling tools.
 
@@ -89,6 +91,15 @@ def run_tool_loop(
     `max_iterations` is exhausted without the model reaching a stop_reason
     other than "tool_use", in which case the loop degrades gracefully rather
     than raising or looping forever.
+
+    `trace` gets a truncated `result_summary` per call, for human-readable
+    observability. If `tool_call_log` is also given, it gets the full,
+    untruncated result for each call instead — this is the data
+    `generate_report` grounds its claims against (CLAUDE.md: "every field
+    that references customer data or policy must be traceable to an actual
+    tool result in state['tool_call_log']"), so it must not be truncated the
+    way the trace summary is. Optional and additive — omitting it changes
+    nothing about the loop's existing behavior.
     """
     messages: list[dict[str, Any]] = [{"role": "user", "content": user_prompt}]
     last_text = ""
@@ -135,6 +146,15 @@ def run_tool_loop(
                 args=block.input,
                 result_summary=_truncate_result(result),
             )
+            if tool_call_log is not None:
+                tool_call_log.append(
+                    {
+                        "name": block.name,
+                        "args": block.input,
+                        "result": result,
+                        "timestamp": datetime.now(UTC).isoformat(),
+                    }
+                )
 
             tool_results.append(
                 {
