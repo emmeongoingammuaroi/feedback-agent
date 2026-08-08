@@ -143,6 +143,7 @@ In roughly the order I'd tackle them:
 - **Multi-turn clarification and batch processing.** Both bonus items, skipped for the same reason. Clarification for genuinely ambiguous cases needs a stateful conversation rather than this single-shot pipeline; neither would have improved the four graded core requirements.
 - **Real observability.** Today's trace is a local JSON file plus stdout logging. A real deployment would want structured tracing (OpenTelemetry or similar) so a triage run could be correlated across services, not just replayed from a file on disk.
 - **A real review queue.** The human-review loop, as described above, would need to become a real queue or ticketing integration — `review_log.jsonl` is deliberately just far enough built to show where that plugs in.
+- **Configurable output paths.** `samples/` and `review_log.jsonl` are hardcoded relative paths in `main.py` / `scripts/run_samples.py` / `human_review.py` rather than `Settings` fields. That's fine for a CLI tool run from the repo root, but a real deployment would want these configurable. `mock_data/*.json` paths are left as-is either way — they're bundled package resources, not environment config.
 
 ## Time Estimate
 

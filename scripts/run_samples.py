@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 from dotenv import load_dotenv
+from langgraph.graph.state import CompiledStateGraph
 
 from feedback_agent.graph import build_graph
 from feedback_agent.models.feedback import FeedbackSubmission
@@ -135,7 +136,7 @@ def _render_transcript(
     return "\n".join(lines)
 
 
-def run_sample(graph, index: int, sample: dict) -> None:
+def run_sample(graph: CompiledStateGraph, index: int, sample: dict) -> None:
     """Invoke the graph for one sample and write its Markdown transcript."""
     submission = FeedbackSubmission(**sample["submission"])
     initial_state: AgentState = {
